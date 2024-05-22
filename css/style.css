@@ -65,7 +65,7 @@
 .banner-slide {
   position: absolute;
   top: 13.5rem;
-  left: 15rem;
+  right: 15rem;
   background: #5f5;
   z-index: 1;
   width: 41.3rem;
