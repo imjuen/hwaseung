@@ -68,6 +68,7 @@
   color: #000;
 }
 
+#header.w-bg .btn-m-menu,
 #header.w-bg .btn-menu,
 #header.active .btn-menu {
   background-image: url(../img/ico-menu-b.svg);
@@ -213,6 +214,42 @@
   width: 2.5rem;
   height: 2.5rem;
   background: url(../img/ico-menu.svg) no-repeat 0 0 / contain;
+}
+
+.btn-m-menu {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: url(../img/ico-menu.svg) no-repeat 0 0 / contain;
+  display: none;
+}
+
+/* 모바일 용 전체 메뉴 */
+.dim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+  display: none;
+}
+
+.m-submenu-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 90%;
+  height: 100vw;
+  background: #fff;
+  z-index: 100;
+  padding: 5vw;
+  transform: translateX(100%);
+  transition: 0.3s;
+}
+
+.m-submenu-wrap.active {
+  transform: translateX(0%);
 }
 
 .visual {
@@ -752,13 +789,21 @@
 }
 
 /* 문제가 발생하는 해상도 */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   #header nav {
     justify-content: space-between;
   }
 
   .gnb {
     display: none;
+  }
+
+  .btn-menu {
+    display: none;
+  }
+
+  .btn-m-menu {
+    display: block;
   }
 
   .business-list {
@@ -823,6 +868,7 @@
     height: 1.7rem;
   }
 
+  .btn-m-menu,
   .btn-menu {
     width: 3.7rem;
     height: 1.7rem;
