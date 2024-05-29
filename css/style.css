@@ -217,9 +217,9 @@
 }
 
 .btn-lang {
-  width: 5.5rem;
+  width: 4.4rem;
   height: 2.5rem;
-  background: red url(../img/btn_language_white_01.png) no-repeat 0 0 / contain;
+  background: url(../img/btn_language_white_01.png) no-repeat 0 0 / contain;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -240,8 +240,8 @@
 .lang-select {
   position: absolute;
   top: 36px;
-  left: 30px;
-  background: #f00;
+  left: 4px;
+  background: #fff;
   padding: 10px;
   height: 3.6rem;
 }
@@ -253,7 +253,7 @@
   left: 50%;
   transform: translateX(-50%);
   border: 4px solid transparent;
-  border-bottom-color: #000;
+  border-bottom-color: #fff;
 }
 
 .lang-select a {
@@ -322,13 +322,18 @@
   padding: 1rem 0;
   transition: 0.4s;
   background: tomato;
+
+  display: flex;
+  /* justify-content: center; */
+  justify-content: space-between;
+  align-items: center;
 }
 
 .m-gnb > li.on > strong {
   background: skyblue;
 }
 
-.m-gnb > li.on > strong::after {
+.m-gnb > li > strong::after {
   content: '';
   display: block;
   width: 1.2rem;
@@ -373,7 +378,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .viedio iframe {
@@ -543,9 +548,9 @@
   flex: 1 1 40%;
 }
 
-.business-list li:not(:hover) {
+/* .business-list li:not(:hover) {
   flex: 1 1 15%;
-}
+} */
 
 .business-list li:hover::before {
   opacity: 1;
@@ -832,8 +837,25 @@
     width: 90.2344%;
   }
 
+  .submenu-wrap {
+    left: 3%;
+  }
+
+  .banner-slide {
+    right: 3%;
+  }
+
   .foot-menu ul {
     gap: 7rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  .submenu-wrap ul li dl dt {
+    font-size: 1.8rem;
+  }
+  .submenu-wrap ul li dl dd {
+    font-size: 1.2rem;
   }
 }
 
@@ -904,7 +926,7 @@
 }
 
 /* 문제가 발생하는 해상도 */
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   #header nav {
     justify-content: space-between;
   }
@@ -995,6 +1017,15 @@
 
   .visual-con h2 {
     font-size: 3rem;
+  }
+
+  .visual-con h2 b {
+    position: inherit;
+  }
+
+  .visual-con h2 b::after {
+    left: 0;
+    bottom: -7px;
   }
 
   .visual-con a {

@@ -45,14 +45,12 @@ $(function () {
     $menu.removeClass('on').eq(menuIdx).addClass('on');
     $submenu.find('li').removeClass('on').eq(menuIdx).addClass('on');
     openMenu();
-
-    // $header.addClass('active');
-    // $submenu.stop().fadeIn(duration);
-    // $banner.stop().fadeIn(duration);
   });
+
   // 마우스가 메뉴에 나가면 (mouseleave)
   $header.on('mouseleave', function () {
     $menu.removeClass('on');
+    $submenu.find('li').removeClass('on');
     closeMenu();
   });
 
@@ -73,16 +71,18 @@ $(function () {
   }
 
   let scrollTop = $window.scrollTop();
-  const visualHeight = $('.visual').outerHeight();
   setWhiteBackground();
 
   function setWhiteBackground() {
+    const visualHeight = $('.visual').outerHeight();
     if (scrollTop >= visualHeight) {
       $header.addClass('w-bg');
     } else {
       $header.removeClass('w-bg');
     }
   }
+
+  $window.on('resize', setWhiteBackground);
 
   // 스크롤 이벤트
   $window.on('scroll', function () {
@@ -100,5 +100,11 @@ $(function () {
   $('.family-site select').on('change', function () {
     const linkValue = $(this).val();
     window.open(linkValue);
+  });
+
+  // AOS.js
+  AOS.init({
+    duration: 600,
+    offset: 200,
   });
 });
